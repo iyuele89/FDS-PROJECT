@@ -39,6 +39,7 @@
 Before applying the gradient filters, it is very important first to filter (smooth) the image, that is because generally noises are overlapped to the signal (the image) and the gradient filter will not only amplify the edges but also the high frequency signals (noise) and introduces artefacts in the output image (aliasing), in this sense the filter can be considered as a low pass filter.** 
 
 
+
 2. **Image Representations, Histogram Distances (10 points)**
 
 3. **Object Identification (10 points)**
