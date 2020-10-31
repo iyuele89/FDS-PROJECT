@@ -33,8 +33,7 @@
     6. *First GxT , then Dx*\
     **This combination has the same effect as question number five, because of the linear property of derivative and convolution operation.**
     
-1. **Image Filtering (10 points)**\
-  1.e **With a kernel radius of 3 sigma and kernel size of (2 * kernel radius) + 1 this filter detects horizontal and vertical edges by applying a convolution operation between the image and Dy and Dx filter respectively, and also a diagonal gradient filter, which combines the horizontal and vertical gradient images in a square root form to detect diagonal edges.\
+1.e    **With a kernel radius of 3 sigma and kernel size of (2 * kernel radius) + 1 this filter detects horizontal and vertical edges by applying a convolution operation between the image and Dy and Dx filter respectively, and also a diagonal gradient filter, which combines the horizontal and vertical gradient images in a square root form to detect diagonal edges.\
 Finally the horizontal and the vertical gradient filter have been applied to the images “graf.png” and “gantrycrane.png” to detect the vertical and horizontal edges respectively, and from the output of the gradient images we can clearly see that because of the derivative filter which amplifies abrupt transition in pixel intensity, the edges are emphasized and detected. More specifically horizontal edges are detected by vertical gradient filter and vertical edges are detected by horizontal gradient filter.
 Before applying the gradient filters, it is very important first to filter (smooth) the image, that is because generally noises are overlapped to the signal (the image) and the gradient filter will not only amplify the edges but also the high frequency signals (noise) and introduces artefacts in the output image (aliasing).**
 
