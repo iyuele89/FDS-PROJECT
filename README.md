@@ -1,19 +1,14 @@
 # FDS-PROJECT
 
 1. **Image Filtering (10 points)**
-    * What happens when you apply the following Filter combinations? 
-    2. *First Gx, then GxT*
- 
- *First Gx, then DxT*
- 
- *First DxT , then Gx*
- 
- *First Dx, then DxT*
- 
- *First Dx, then GxT*
- 
- *First GxT , then Dx*
- 
+   1.d  What happens when you apply the following Filter combinations? 
+    
+    1. *First Gx, then GxT*
+    2. *First Gx, then DxT*
+    3. *First DxT , then Gx*
+    4.*First Dx, then DxT*
+    5. *First Dx, then GxT*
+    6.*First GxT , then Dx*
 
 2. **Image Representations, Histogram Distances (10 points)**
 
