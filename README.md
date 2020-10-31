@@ -1,8 +1,8 @@
 # FDS-PROJECT
 
 1. **Image Filtering (10 points)**
- 1.  What happens when you apply the following Filter combinations? 
- 2.*First Gx, then GxT*
+    1. What happens when you apply the following Filter combinations? 
+    2. *First Gx, then GxT*
  
  *First Gx, then DxT*
  
