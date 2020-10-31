@@ -62,12 +62,10 @@ def gaussderiv(img, sigma):
     Dy = Dx.T
     imgDx = np.zeros(img.shape)
     imgDy = np.zeros(img.shape)
-    smooth_img = np.zeros(img.shape)
     h = img.shape[0]
     w = img.shape[1]
-    smooth_img = gaussianfilter(img, sigma)
     for i in range(h):
-        imgDx[i] = conv1(smooth_img[i], Dx, mode="reflect")
+        imgDx[i] = conv1(img[i], Dx, mode="reflect")
     for i in range(w):
-        imgDy[:, i] = conv1(smooth_img[:, i], Dy, mode="reflect")
+        imgDy[:, i] = conv1(img[:, i], Dy, mode="reflect")
     return imgDx, imgDy

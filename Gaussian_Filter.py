@@ -1,5 +1,4 @@
 # import packages
-
 import numpy as np
 from PIL import Image
 from scipy.signal import convolve2d as conv2
@@ -8,32 +7,21 @@ import gauss_module
 
 
 def rgb2gray(rgb):
-
     r, g, b = rgb[:, :, 0], rgb[:, :, 1], rgb[:, :, 2]
     gray = 0.2989 * r + 0.5870 * g + 0.1140 * b
-
     return gray
 
 
 # function gauss (Question 1.a)
-
 sigma = 4.0
 [Gx, x] = gauss_module.gauss(sigma)
-print(Gx)
-print(Gx.ndim)
-print(Gx.shape)
-print(Gx.size)
 plt.figure(1)
 plt.plot(x, Gx, '.-')
 plt.show()
 
 
 # function gaussianfilter (Question 1.b)
-
 img = rgb2gray(np.array(Image.open('graf.png')))
-print(img.ndim)
-print(img.shape)
-print(img.size)
 smooth_img = gauss_module.gaussianfilter(img, sigma)
 
 plt.figure(2)
@@ -47,7 +35,6 @@ plt.show()
 
 
 # function gaussdx (Question 1.c)
-
 sigma = 4.0
 [Gx, x] = gauss_module.gauss(sigma)
 [Dx, x] = gauss_module.gaussdx(sigma)
@@ -60,7 +47,6 @@ plt.show()
 
 
 # function gaussdx (Question 1.d)
-
 img_imp = np.zeros([27, 27])
 img_imp[13, 13] = 1.0
 plt.figure(6), plt.imshow(img_imp, cmap='gray')
@@ -89,7 +75,6 @@ plt.show()
 
 
 # function gaussderiv (Question 1.e)
-
 img_c = np.array(Image.open('graf.png')).astype('double')
 img = rgb2gray(img_c)
 [imgDx, imgDy] = gauss_module.gaussderiv(img, 7.0)
@@ -106,7 +91,6 @@ plt.sca(ax3)
 imgmag = np.sqrt(imgDx**2 + imgDy**2)
 plt.imshow(imgmag, cmap='gray')
 plt.show()
-
 
 sigma = 7
 img_1 = rgb2gray(np.array(Image.open('graf.png')))
