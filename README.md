@@ -5,8 +5,8 @@
     
     1. *First Gx, then Gx<sup>T</sup>*\
     **First we smooth the image in the horizontal direction by applying the single-dimensional Gaussian matrices Gx, then then we repeat the process in the vertical direction 
-    Gy = Gx^T. It has the same effect of applying a two-dimensional gaussian matrix because the gaussian filter is a separable one. In computational terms, applying  the
-    independent one-dimensional filter is more efficient, since the calculation can be performed in O(n) rather than O(n^2).
+    Gy = Gx<sup>T</sup>. It has the same effect of applying a two-dimensional gaussian matrix because the gaussian filter is a separable one. In computational terms, 
+    applying  the independent one-dimensional filter is more efficient, since the calculation can be performed in O(n) rather than O(n^2).
     Each pixels of the blurred image are set to a weighted average of that pixel’s neighborhood. The original pixel's value receives the heaviest weight
     (having the highe Gaussian value) and neighboring pixels receive smaller weights as their distance to the original pixel increases.**
     
@@ -28,7 +28,7 @@
     
     5. *First Dx, then Gx<sup>T</sup>*\
     **Here the one dimensional gaussian filter is smoothing in the horizontal direction (in general filter the high frequency pixels) followed by a first order differentiation 
-    in y direction (Gx^T = Gy), which attributes highest gaussian values to pixels positioned right to the edges and low values to those in the left.**
+    in y direction (Gx<sup>T</sup> = Gy), which attributes highest gaussian values to pixels positioned right to the edges and low values to those in the left.**
     
     6. *First Gx<sup>T</sup> , then Dx*\
     **This combination has the same effect as question number five, because of the linear property of derivative and convolution operation.**
