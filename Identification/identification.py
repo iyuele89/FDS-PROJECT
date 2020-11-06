@@ -99,7 +99,7 @@ hist1_rgb = histogram_module.rgb_hist(img1_color.astype('double'), num_bins_colo
 hist2_rgb = histogram_module.rgb_hist(img2_color.astype('double'), num_bins_color)
 
 print('Distance according to dist_l2 %f'% dist_module.dist_l2(hist1_rgb,hist2_rgb))
-print('Distance according to dist_interset %f'% dist_module.dist_intersect(hist1_rgb,hist2_rgb))
+print('Distance according to dist_intersect %f'% dist_module.dist_intersect(hist1_rgb,hist2_rgb))
 print('Distance according to dist_chi2 %f'% dist_module.dist_chi2(hist1_rgb,hist2_rgb))
 
 
@@ -168,8 +168,8 @@ with open('query.txt') as fp:
     query_images = fp.readlines()
 query_images = [x.strip() for x in query_images] 
 
-dist_type = 'intersect';
-hist_type = 'rg';
+dist_type = 'l2';
+hist_type = 'rgb';
 num_bins = 30;
 
 [best_match, D] = match_module.find_best_match(model_images, query_images, dist_type, hist_type, num_bins)

@@ -84,24 +84,35 @@ def rgb_hist(img_color_double, num_bins):
 def rg_hist(img_color_double, num_bins):
     assert len(img_color_double.shape) == 3, 'image dimension mismatch'
     assert img_color_double.dtype == 'float', 'incorrect image type'
+    bin_size = 255 / num_bins
 
+    # Define a 2D histogram  with "num_bins^2" number of entries
 
-    #... (your code here)
-
-
-    #Define a 2D histogram  with "num_bins^2" number of entries
     hists = np.zeros((num_bins, num_bins))
-    
-    
-    #... (your code here)
 
+    img_reshape = img_color_double.reshape(img_color_double.shape[0] * img_color_double.shape[1],
+                                           img_color_double.shape[2])
 
-    #Return the histogram as a 1D vector
+    img_reshape = img_reshape[:, 0:2]
+
+    # Loop for each pixel i in the image
+
+    # Increment the histogram bin which corresponds to the R,G  value of the pixel i
+
+    for i in img_reshape:
+        indices = np.ceil(i / bin_size).astype(int) - 1
+
+        hists[indices[0], indices[1]] += 1
+
+        # normalize
+
+    hists = hists / hists.sum()
+
+    # Return the histogram as a 1D vector
+
     hists = hists.reshape(hists.size)
 
     return hists
-
-
 
 
 #  Compute the *joint* histogram of Gaussian partial derivatives of the image in x and y direction

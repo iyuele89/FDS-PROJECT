@@ -26,11 +26,17 @@ def dist_l2(x,y):
 # Add a minimum score to each cell of the histograms (e.g. 1) to avoid division by 0
 
 def dist_chi2(x,y):
+  x = x + 0.00000001
+  y = y + 0.00000001
+
   dist = np.sum((x - y) ** 2 / (x + y))
   return dist
     
 
 def get_dist_by_name(x, y, dist_name):
+  x = x + 0.00000001
+  y = y + 0.00000001
+
   if dist_name == 'chi2':
     return dist_chi2(x,y)
   elif dist_name == 'intersect':

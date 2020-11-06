@@ -31,7 +31,7 @@ def find_best_match(model_images, query_images, dist_type, hist_type, num_bins):
     model_hists = compute_histograms(model_images, hist_type, hist_isgray, num_bins)
     query_hists = compute_histograms(query_images, hist_type, hist_isgray, num_bins)
     
-    D = np.zeros((len(model_images), len(query_images)))
+    D = np.zeros((len(query_hists), len(model_hists)))
 
     for i in range(len(query_hists)):
         for j in range(len(model_hists)):
